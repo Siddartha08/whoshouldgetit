@@ -1,0 +1,16 @@
+.SectionComponent {
+  // Ensure container is above bgImage
+  .container {
+    position: relative;
+  }
+
+  // .div {
+  //   height: 80px;
+  // }
+
+  // Add light border if two white
+  // sections next to each other.
+  .bg-white + &.bg-white {
+    border-top: 1px solid #F0F0F0;
+  }
+}
