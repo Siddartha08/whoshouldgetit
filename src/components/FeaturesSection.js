@@ -13,12 +13,12 @@ import "./FeaturesSection.scss";
 
 import firebase from "firebase/app";
 import '@firebase/firestore';
-import axios from "axios";
-import { Component } from "react";
-// import {CookiesProvider} from "react-cookie";
+
+
+
 import { useCookies } from "react-cookie";
 
-// import * as admin from "@firebase/app";
+
 
 function FeaturesSection(props) {
   var randomIndex1 = randomNumber(1, 42, -1);
