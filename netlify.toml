@@ -1,16 +1,12 @@
 [build]
   publish = "build"
-command = "npm run build"
+command = "npm start"
   functions = "api"
 
-# Rewrite API requests to actual location of serverless functions
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+
 
 # Catch all other requests that don't match a file
 [[redirects]]
-  from = "/*"
+  from = "/build"
   to = "/index.html"
   status = 200
