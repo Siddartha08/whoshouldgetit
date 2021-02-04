@@ -1,7 +1,7 @@
   
 [build]
   publish = "build"
-command = "npm run eject"
+command = "npm run build"
  
 
 
