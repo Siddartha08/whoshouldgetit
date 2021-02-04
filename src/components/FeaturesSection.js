@@ -153,7 +153,7 @@ function FeaturesSection(props) {
     }
     
     
-    done = false;
+    
   },1)
   
   // if((tencount == 10) || !done) {
