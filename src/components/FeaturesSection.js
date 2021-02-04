@@ -1,13 +1,11 @@
-import React, {useState, useEffect, useReducer, proptypes} from "react";
+import React, {useState, useEffect} from "react";
 import Section from "./Section";
 
 import Container from "react-bootstrap/Container";
 import SectionHeader from "./SectionHeader";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import AspectRatio from "./AspectRatio";
-import Image from "react-bootstrap/Image";
+
+
 import { Button } from 'react-bootstrap';
 import "./FeaturesSection.scss";
 
@@ -36,7 +34,7 @@ function FeaturesSection(props) {
 
   var [showdata, setShowData] = useState(true)
 
-  const [first, setFirst] = useState('Fire Fighters');
+  
   const [tencount, tenCountChange] = useState(0);
 
  
@@ -47,11 +45,11 @@ function FeaturesSection(props) {
   const [noLoad, noLoadSet] = useState(false)
 
   
-  var [databaseValues,setdata] = useState([0]);
+  
 
   function randomNumber(max , min, except) {
     let num = Math.floor(Math.random() * (max - min)) + min;
-    return (num == except) ? randomNumber(max, min, except) : num;
+    return (num === except) ? randomNumber(max, min, except) : num;
   }
 
   function wrapper(value, setValue){
@@ -64,10 +62,10 @@ function FeaturesSection(props) {
   function resetSET(){
     //resets the set value and tencount outside of the count function
     //i kept getting off by one errors within the Count function
-    if(tencount == 10){
+    if(tencount === 10){
       toBeSet([])
       tenCountChange(0)
-      if(showdata == false) {
+      if(showdata === false) {
         setShowData(true)
       }
     }
@@ -76,17 +74,17 @@ function FeaturesSection(props) {
   resetSET()
 
   function Count(value) {
-    var adjustedValue = value - 1
+   
 
 
     if(value < 10) {
-      if(value + 1 == 11) {
+      if(value + 1 === 11) {
         tenCountChange(1)
         toBeSet([])
       }
         tenCountChange(value + 1)
       // newGroups()
-    } else if (value == 10) {
+    } else if (value === 10) {
         tenCountChange(1)
         toBeSet([])
         // newGroups()
@@ -144,7 +142,7 @@ function FeaturesSection(props) {
   //when to push data to the database,
   //if 10 submissions are reached push to database
   //if a timeout limit is reached push to database
-  var done
+  
   var thisTimeout = setTimeout(function() {
     if(set.length > 0 ){
         timedPush()
@@ -161,48 +159,39 @@ function FeaturesSection(props) {
   // if((tencount == 10) || !done) {
   //   //resolverFunction();
   // }
-  function resolverFunction() {
-    clearTimeout(thisTimeout)
-    
-    // timedPush() function will go here to and will reset
-    // the done value to True once it completes.
-    
-  }
+ 
 
-  function timedPush() {
-    var sendingDocs = []
-    var index = 0
-    set.forEach(element => {
-        let text = "comp" + Object.key(element)
-        sendingDocs.push(element)
-    });
-    //index = 0
-    // connection to firebase code
-    const firebaseConfig = { 
-      apiKey: process.env.REACT_APP_API_KEY,
-      authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOAMIN,
-      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-      storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-      messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-      appId: process.env.REACT_APP_API_ID,
+  // function timedPush() {
+  //   var sendingDocs = []
+  //   var index = 0
+  //   set.forEach(element => {
+  //       let text = "comp" + Object.key(element)
+  //       sendingDocs.push(element)
+  //   });
+  //   //index = 0
+  //   // connection to firebase code
+  //   const firebaseConfig = { 
+  //     apiKey: process.env.REACT_APP_API_KEY,
+  //     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOAMIN,
+  //     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  //     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  //     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  //     appId: process.env.REACT_APP_API_ID,
   
-    }
-    if(!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    } else {
-      firebase.app()
-    }
-    // connections to firebase code 
-    const db = firebase.firestore();
+  //   }
+  //   if(!firebase.apps.length) {
+  //     firebase.initializeApp(firebaseConfig);
+  //   } else {
+  //     firebase.app()
+  //   }
+  //   // connections to firebase code 
+    
   
    
-  }
+  // }
 
 
-  function resetTencount() {
-    tencount = 1;
-    done = false;
-  }
+
 
   function setToSend(value) {
     
@@ -213,7 +202,7 @@ function FeaturesSection(props) {
 
   function timedPush() {
     var sentSet = {}
-    var setValue = -1
+    
 
     const firebaseConfig = { 
       apiKey: process.env.REACT_APP_API_KEY,
@@ -277,20 +266,20 @@ function FeaturesSection(props) {
   var topRankings = []
   var topRankings2 = []
   var bottomRankings = []
-  var bottomRankings2 = []
-  var topResults = []
-  var bottomResults = []
+  // var bottomRankings2 = []
+  // var topResults = []
+  // var bottomResults = []
   var allComparison = []
   var allResults = []
   var revResults = []
-  var ReceivedData= 0
-  var comparison = []
+  // var ReceivedData= 0
+  // var comparison = []
 
     const db = firebase.firestore();
     
     
     const data3 = db.collection('submissions')
-    if(showdata == true) {
+    if(showdata === true) {
     const getAndCreateData = () => {
       data3.get().then((QS) => {
       
@@ -336,7 +325,7 @@ function FeaturesSection(props) {
  
           for(let i = 0; i < topRankings2.length; i++){
         
-            if(e.type == topRankings2[i].type){
+            if(e.type === topRankings2[i].type){
               
            
               e.percentage = parseInt(((topRankings2[i].value)/parseFloat(e.value)*100).toFixed(2))
@@ -348,7 +337,7 @@ function FeaturesSection(props) {
           }
 
           for(let j = 0; j < allResults.length; j++){
-            if(e.percentage == undefined) {
+            if(e.percentage === undefined) {
               e.percentage = 0;
             }
           }

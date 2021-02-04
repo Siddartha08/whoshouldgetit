@@ -118,7 +118,7 @@ npm run build
 
 Install the Netlify CLI
 ```
-npm install netlify-cli -g
+npm install netli fy-cli -g
 ```
 
 Then run this command in your project directory to deploy to Netlify
