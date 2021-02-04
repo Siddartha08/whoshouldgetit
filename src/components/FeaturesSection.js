@@ -525,7 +525,7 @@ function FeaturesSection(props) {
               style={{marginRight: "20px"}}>
             Tweet</a>
 
-            <iframe className="d-none d-md-block" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.whoshouldgetit.com&layout=button_count&size=large&width=88&height=28&appId"  style={{border:"none",
+            <iframe title="title" className="d-none d-md-block" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.whoshouldgetit.com&layout=button_count&size=large&width=88&height=28&appId"  style={{border:"none",
             overflow:"hidden",
             width: "110px", height:"28px"
             }} scrolling={"no"} frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -544,19 +544,19 @@ function FeaturesSection(props) {
               <th scope="col"># appearances</th>
               </thead>
               <tbody>
-                  {noLoad == false ? "Loading..." : allResultsVal["0"].map((item, i) => (
+                  {noLoad === false ? "Loading..." : allResultsVal["0"].map((item, i) => (
                     <tr className={i < 8 ? "" :"d-none"} key={i}  >
                     {/* <td className={i < 8 ? "" :"d-none"} >{i + 1}</td> */}
-                     <td className={i < 8 ? "" :"d-none"} >{noLoad == false ? "undefined" : categories[item.type]}</td>
-                    <td className={i < 8 ? "" :"d-none"} >{noLoad == false ? "undefined" : item.percentage +"%"}</td>
-                    <td className={i < 8 ? "" :"d-none"} >{noLoad == false ? "undefined" : item.value}</td>
+                     <td className={i < 8 ? "" :"d-none"} >{noLoad === false ? "undefined" : categories[item.type]}</td>
+                    <td className={i < 8 ? "" :"d-none"} >{noLoad === false ? "undefined" : item.percentage +"%"}</td>
+                    <td className={i < 8 ? "" :"d-none"} >{noLoad === false ? "undefined" : item.value}</td>
                     </tr>
                   )
                   )}
               </tbody>
              </table>
       </Container>
-      <Container className={showdata == false ? "d-none" : ""}  >
+      <Container className={showdata === false ? "d-none" : ""}  >
       <div style={{display: "flex", justifyContent: "space-between"}}>
       <h2 style={{paddingLeft: "10px"}} >Bottom Results</h2>
       <div style={{display: "flex", justifyContent: "flex-end"}}>
@@ -566,7 +566,7 @@ function FeaturesSection(props) {
               style={{marginRight: "20px"}}>
             Tweet</a>
 
-            <iframe className="d-none d-md-block" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.whoshouldgetit.com&layout=button_count&size=large&width=88&height=28&appId"  style={{border:"none",
+            <iframe title="title2" className="d-none d-md-block" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.whoshouldgetit.com&layout=button_count&size=large&width=88&height=28&appId"  style={{border:"none",
             overflow:"hidden",
             width: "110px", height:"28px"
             }} scrolling={"no"} frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -585,13 +585,13 @@ function FeaturesSection(props) {
               <th scope="col"># appearances</th>
               </thead>
               <tbody>
-                  {noLoad == false ? "Loading..." : RevResultsVal["0"].map((item, i) => (
+                  {noLoad === false ? "Loading..." : RevResultsVal["0"].map((item, i) => (
                     
                     <tr className={i < 8 ? "" :"d-none"} key={i}  >
                     {/* <td className={i < 8 ? "" :"d-none"} >{i + 1}</td> */}
-                     <td className={i < 8 ? "" :"d-none"} >{noLoad == false ? "undefined" : categories[item.type]}</td>
-                    <td className={i < 8 ? "" :"d-none"} >{noLoad == false ? "undefined" : item.percentage+"%"}</td>
-                    <td className={i < 8 ? "" :"d-none"} >{noLoad == false ? "undefined" : item.value}</td>
+                     <td className={i < 8 ? "" :"d-none"} >{noLoad === false ? "undefined" : categories[item.type]}</td>
+                    <td className={i < 8 ? "" :"d-none"} >{noLoad === false ? "undefined" : item.percentage+"%"}</td>
+                    <td className={i < 8 ? "" :"d-none"} >{noLoad === false ? "undefined" : item.value}</td>
                     </tr>
                   )
                   )}
